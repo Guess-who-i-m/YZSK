@@ -1,0 +1,45 @@
+menu "Example Configuration"
+
+    config BROKER_URL
+        string "Broker URL"
+        default "mqtt://homeassistant.local:1883"
+        help
+            URL of the broker to connect to
+
+    config BROKER_PORT
+        int "Broker PORT"
+        default 1883
+        help
+            PORT of the broker to connect to
+
+    config BROKER_USERNAME
+        string "Broker USERNAME"
+        default "Home Assistant Username"
+        help
+            USERNAME of the broker
+
+    config BROKER_PASSWORD
+        string "Broker PASSWORD"
+        default "Home Assistant Password"
+        help
+            PASSWORD of the broker
+
+    # config EXAMPLE_WIFI_SSID
+    #     string "SSID"
+    #     default "P50Pro"
+    #     help
+    #         SSID of the WiFi network to connect to
+
+    # config EXAMPLE_WIFI_PASSWORD
+    #     string "Password"
+    #     default "a1234567"
+    #     help
+    #         Password of the WiFi network to connect to
+
+    config HTTP_URL_ADDRESS
+        string "HTTP URL address"
+        default "http://api.map.baidu.com/weather/v1/?district_id=310115&data_type=all&ak=你的百度AK"
+        help
+            Baidu API URL for the HTTP GET request. Configure district_id and ak
+
+endmenu

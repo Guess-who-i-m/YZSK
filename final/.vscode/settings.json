@@ -1,0 +1,11 @@
+{
+    "idf.adapterTargetName": "esp32s3",
+    "idf.portWin": "COM6",
+    "idf.flashType": "UART",
+    "files.associations": {
+        "vector": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "http.h": "c"
+    }
+}

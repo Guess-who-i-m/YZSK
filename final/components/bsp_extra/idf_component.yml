@@ -1,0 +1,7 @@
+## IDF Component Manager Manifest File
+dependencies:
+  idf: ">=5.0"
+
+  chmorgan/esp-audio-player: "*"
+  chmorgan/esp-file-iterator: "*"
+  espressif/led_strip: ^2
