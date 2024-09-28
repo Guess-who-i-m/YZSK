@@ -1,0 +1,33 @@
+{
+  typestat:{
+    smooth:2,
+    interrupt:0,
+    repeatA:2,
+    repeatB:0,
+    repeatC:1,
+    toolong:2
+  },
+  hodata:[
+    {
+      "heartRate": 72,
+      "oxygenLevel": 98.5,
+      "recordTime": "2024-07-23T19:25:22.000+00:00"
+    },
+    {
+      "heartRate": 73,
+      "oxygenLevel": 98.6,
+      "recordTime": "2024-07-23T19:25:22.000+00:00"
+    }
+  ],
+  imageData:[
+    {
+      "imageData": "Neutral"
+    },
+    {
+      "imageData": "Happy"
+    },
+    {
+      "imageData": "Neutral"
+    }
+  ]
+}
