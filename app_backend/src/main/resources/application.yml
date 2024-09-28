@@ -1,0 +1,30 @@
+server:
+  ip:  127.0.0.1
+  port: 9000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: 'root'
+    password: '123456'
+    url: jdbc:mysql://localhost:3306/espdatabase?serverTimezone=UTC
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    accessKeyId: LTAI5tETPnPzj45sTrH4dXus
+    accessKeySecret: bRsb3Z9Ve8tith9mP3cnasRMt8Pg0D
+    bucketName: aminos-callismart
+    urlPrefix: https://orcas-rent.oss-cn-beijing.aliyuncs.com/
+
+api:
+  url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+  key: sk-baf93a17a95347288868302988389c7e
