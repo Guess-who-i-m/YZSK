@@ -1,0 +1,40 @@
+# 深度学习调研
+
+## 1.表情识别face expression recognition
+
+### 1.DenseNet, EfficientNet, MobileNet, ResNet, Inception
+
+[Facial-Emotion-Recognition](https://github.com/Data-Co-Lab/Facial-Emotion-Recognition.git)
+[FER13 data数据集](https://www.kaggle.com/nicolejyt/facialexpressionrecognition)
+### 2. a keras CNN model and openCV
+[Face classification and detection](https://github.com/oarriaga/face_classification.git)
+给数据了
+### 3.PoseNet and FaceMesh
+[pose-animator](https://github.com/yemount/pose-animator.git)
+既有表情识别也有肢体动作识别
+### 4.cnn 中文
+[facial-expression-recognition](https://github.com/hexiang10/facial-expression-recognition.git)
+[本项目的数据集文件下载地址](https://download.csdn.net/download/HXBest/64847238)
+[本项目的训练模型文件下载地址](https://download.csdn.net/download/HXBest/64955910)
+### 5.Python 3, OpenCV, Tensorflow
+[Emotion-detection](https://github.com/atulapra/Emotion-detection.git)
+Download the FER-2013 dataset inside the src folder.
+
+## 2.口吃识别
+### 1. remove stuttering from a voice sample and passed to Google voice API for recognition
+[Stuttered-Speech-recognition](https://github.com/khannasarthak/Stuttered-Speech-recognition.git)
+数据给了，在sample中
+### 2.Python 3.6 or higher TensorFlow 2.0 or higher Keras 2.3.1 or higher PyAudio 0.2.11 or higher
+[GFGPROJECT](https://github.com/ruthvik2424/GFGPROJECT.git)
+### 3.Dependencies
+Python 3.x
+speech_recognition module
+gTTS module
+mpg321 package
+PyAudio package
+Scikit-learn module
+[Stuttering Speech Recognition](https://github.com/UPavankumar/Stuttering-Speech-Recognition.git)
+### 4.weighted MFCC and bidirectional LSTM
+[ASSR](https://github.com/umnvd/ASSR.git)
+## 3.数据集补充
+[面部表情识别1：表情识别数据集(含下载链接)CSDN](https://blog.csdn.net/guyuealian/article/details/129428657)
