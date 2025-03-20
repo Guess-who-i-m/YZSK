@@ -31,18 +31,18 @@
 
 ## 后端文档
 
-该文档简要列举了项目中常用的后端接口，方便快速了解各功能的调用方式和数据结构。以下链接中提到的源码均可在 [YZSK/app_backend/src/main/java/com/skelig/demo](YZSK/app_backend/src/main/java/com/skelig/demo) 路径下找到。
+该文档简要列举了项目中常用的后端接口，方便快速了解各功能的调用方式和数据结构。以下链接中提到的源码均可在 [app_backend/src/main/java/com/skelig/demo](app_backend/src/main/java/com/skelig/demo) 路径下找到。
 
 ---
 
 ### BoardController
 
-位于 [BoardController.java](YZSK/app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)，主要负责音频、图片、心率血氧等数据的上传和处理。
+位于 [BoardController.java](app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)，主要负责音频、图片、心率血氧等数据的上传和处理。
 
 1. **上传语音**  
    
    - 路径: `POST /uploadAudio`  
-   - 方法签名: [`BoardController.uploadAudio`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
+   - 方法签名: [`BoardController.uploadAudio`](app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
    - 参数:  
      - form-data 中的 `file` (MultipartFile)  
    - 功能:  
@@ -54,7 +54,7 @@
 2. **上传图片**  
    
    - 路径: `POST /uploadImage`  
-   - 方法签名: [`BoardController.uploadImage`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
+   - 方法签名: [`BoardController.uploadImage`](app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
    - 参数:  
      - 请求头 `Session-ID`  
      - Body 中的 `byte[]` 图片数据  
@@ -66,7 +66,7 @@
 3. **上传心率血氧**  
    
    - 路径: `POST /uploadHeartrateOxygen`  
-   - 方法签名: [`BoardController.uploadOxygen`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
+   - 方法签名: [`BoardController.uploadOxygen`](app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
    - 参数:  
      - JSON 对象 HoData  
    - 功能:  
@@ -77,7 +77,7 @@
 4. **开始训练请求**  
    
    - 路径: `GET /upload/getPracBegin`  
-   - 方法签名: [`BoardController.getPracBegin`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
+   - 方法签名: [`BoardController.getPracBegin`](app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
    - 功能:  
      - 生成新的 sessionId 并关联到最近任务。  
    - 返回:  
@@ -86,7 +86,7 @@
 5. **获取训练文本 (已弃用)**  
    
    - 路径: `GET /training/text/{rank}`  
-   - 方法签名: [`BoardController.getTrainingText`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
+   - 方法签名: [`BoardController.getTrainingText`](app_backend/src/main/java/com/skelig/demo/controller/BoardController.java)  
    - 说明: 提供基础训练文本
 
 6. **获取演讲文本**  
@@ -129,12 +129,12 @@
 
 ### UserController
 
-位于 [UserController.java](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)，主要负责用户端的查询、统计、任务管理等功能。
+位于 [UserController.java](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)，主要负责用户端的查询、统计、任务管理等功能。
 
 1. **查看所有任务记录**  
    
    - 路径: `GET /user/getTasks`  
-   - 方法签名: [`UserController.getTasks`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
+   - 方法签名: [`UserController.getTasks`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
    - 功能:  
      - 返回数据库中已创建的所有任务。  
    - 返回:  
@@ -143,7 +143,7 @@
 2. **根据 TaskID 获取所有训练记录**  
    
    - 路径: `GET /user/getSessionMsg/{task_id}`  
-   - 方法签名: [`UserController.getSessionMsg`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
+   - 方法签名: [`UserController.getSessionMsg`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
    - 功能:  
      - 获取对应任务下的所有 session 及其上传的图片、心率血氧等数据。  
    - 返回:  
@@ -152,7 +152,7 @@
 3. **查看口吃统计信息**  
    
    - 路径: `GET /user/Typestat/{task_id}`  
-   - 方法签名: [`UserController.getTypeStat`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
+   - 方法签名: [`UserController.getTypeStat`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
    - 功能:  
      - 对指定任务的所有训练口吃数据进行聚合统计 (中断、重复等)。  
    - 返回:  
@@ -161,7 +161,7 @@
 4. **获取平均心率与血氧**  
    
    - 路径: `GET /user/getHodataBytaskid/{task_id}`  
-   - 方法签名: [`UserController.getHodataBytaskid`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
+   - 方法签名: [`UserController.getHodataBytaskid`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
    - 功能:  
      - 统计指定任务下所有训练的平均心率和血氧。  
    - 返回:  
@@ -170,7 +170,7 @@
 5. **创建新任务**  
    
    - 路径: `POST /user/buildNewTask/{rank}`  
-   - 方法签名: [`UserController.buildNewTask`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
+   - 方法签名: [`UserController.buildNewTask`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
    - 功能:  
      - 根据 rank 参数创建新的任务并写入数据库 (0 为自定义训练，非 0 为基础训练)。  
    - 返回:  
@@ -180,7 +180,7 @@
 
 ### ChatController
 
-位于 [ChatController.java](YZSK/app_backend/src/main/java/com/skelig/demo/controller/ChatController.java)，提供聊天和指导建议相关接口。
+位于 [ChatController.java](app_backend/src/main/java/com/skelig/demo/controller/ChatController.java)，提供聊天和指导建议相关接口。
 
 1. **实时聊天接口**  
    
@@ -207,6 +207,6 @@
 ### 其他接口
 
 - `GET /user/getBasicText`  
-  获取所有基础训练文本: [`UserController.getBasicText`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
+  获取所有基础训练文本: [`UserController.getBasicText`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)  
 - `GET /user/SessionLogs/{task_id}`  
-  获取指定任务下的 session 日志信息: [`UserController.getSessionLogs`](YZSK/app_backend/src/main/java/com/skelig/demo/controller/UserController.java)
+  获取指定任务下的 session 日志信息: [`UserController.getSessionLogs`](app_backend/src/main/java/com/skelig/demo/controller/UserController.java)
