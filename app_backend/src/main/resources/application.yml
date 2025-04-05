@@ -6,8 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: 'root'
-    password: '123456'
-    url: jdbc:mysql://localhost:3306/espdatabase?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/YZSK?serverTimezone=UTC
   servlet:
     multipart:
       max-file-size: 50MB
