@@ -38,8 +38,10 @@ public class AskForAdvice {
             body.add("audio_file", new FileSystemResource(tempFile));
 
             HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
-            String serverUrl = "https://u349276-a810-a83d2396.westc.gpuhub.com:8443/speech-recognization";
-            String serverUrl2="https://u349276-a810-a83d2396.westc.gpuhub.com:8443";
+//            String serverUrl = "https://u349276-a810-a83d2396.westc.gpuhub.com:8443/speech-recognization";
+//            String serverUrl2="https://u349276-a810-a83d2396.westc.gpuhub.com:8443";
+            String serverUrl = "http://localhost:6006/speech-recognition";
+            String serverUrl2 = "http://localhost:6006";
             ResponseEntity<String> response = restTemplate.postForEntity(serverUrl, requestEntity, String.class);
             if (!response.getStatusCode().is2xxSuccessful()) {
                 return null;  // Early exit if response is not 2xx

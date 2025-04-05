@@ -2,8 +2,10 @@
 #include <esp_log.h>
 #include "freertos/event_groups.h"
 
-#define EXAMPLE_ESP_WIFI_SSID      "qianyu"
-#define EXAMPLE_ESP_WIFI_PASS      "04150415"
+// #define EXAMPLE_ESP_WIFI_SSID      "qianyu"
+// #define EXAMPLE_ESP_WIFI_PASS      "04150415"
+#define EXAMPLE_ESP_WIFI_SSID      "nova5pro"
+#define EXAMPLE_ESP_WIFI_PASS      "12345678"
 #define EXAMPLE_ESP_WIFI_CHANNEL   1
 #define EXAMPLE_MAX_STA_CONN       4
 

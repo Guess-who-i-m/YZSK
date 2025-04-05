@@ -73,13 +73,13 @@ public class UploadServiceImpl implements UploadService {
                                 .resolver(DefaultAddressResolverGroup.INSTANCE)
                                 .responseTimeout(Duration.ofSeconds(30))  // 设置响应超时
                 ))
-                .baseUrl("https://u349276-838f-daa0c301.westb.seetacloud.com:8443")
+                .baseUrl("http://localhost:6006")
                 .build();
     }
 
     //音频文件上传到云，同时插入数据库中,还需修改
     @Override
-    public String processAudio(MultipartFile audiofile, String sessionId) {
+    public String processAudio(MultipartFile file, String sessionId) {
         //新建问题类
         Typestat typestat = new Typestat();
         //音频库中新建
@@ -87,14 +87,14 @@ public class UploadServiceImpl implements UploadService {
         audio.setSessionId(sessionId);
         try {
             //上传到云上
-            String audioUrl = UpLoadFile.upLoadAudio(audiofile);
+            String audioUrl = UpLoadFile.upLoadAudio(file);
             System.out.println("****----上传的url:"+audioUrl+"----*****");
             audio.setAudioUrl(audioUrl);
             audioMapper.insert(audio); // 插入音频记录到数据库
 
             // 准备文件数据使用 DataBuffer
             Flux<DataBuffer> content = DataBufferUtils.readInputStream(
-                    audiofile::getInputStream,
+                    file::getInputStream,
                     new DefaultDataBufferFactory(),
                     8192
             );
@@ -103,7 +103,7 @@ public class UploadServiceImpl implements UploadService {
             String response = webClient.post()
                     .uri("/FluentNet")
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.MULTIPART_FORM_DATA_VALUE)
-                    .body(BodyInserters.fromMultipartData("audio_file", audiofile.getResource()))
+                    .body(BodyInserters.fromMultipartData("audio_file", file.getResource()))
                     .retrieve()
                     .bodyToMono(String.class)
                     .retryWhen(Retry.backoff(3, Duration.ofSeconds(8))  // 重试机制
@@ -266,7 +266,8 @@ public class UploadServiceImpl implements UploadService {
             //根据sessionId存入数据库
             logMapper.updateAdviceBySessionId(sessionId,advice);
             //发送delete请求，删除文件
-            String url = "https://u349276-a810-a83d2396.westc.gpuhub.com:8443/delete";
+//            String url = "https://u349276-a810-a83d2396.westc.gpuhub.com:8443/delete";
+            String url = "http://localhost:6006/delete";
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
             System.out.println("Status Code: " + response.getStatusCode());
             System.out.println("Response Body: " + response.getBody());
